@@ -34,14 +34,10 @@ Route::get('Religious-Education-and-Quran-Memorization', [master::class, 'Religi
 
 // Admin Routes
 
-// Route::middleware(['AuthCheck'])->group(function () {
-
-// });
-
-
 
 // Protected routes
-Route::middleware(['AuthCheck'])->group(function () {
+Route::middleware(['authcheck'])->group(function () {
+
     Route::get('admin-dashboard', [Master::class, 'addDashboard'])->name('admin-dashboard');
     Route::get('add-cause', [Master::class, 'addCause'])->name('add-cause');
     Route::get('add-event', [Master::class, 'addEvent'])->name('add-event');
