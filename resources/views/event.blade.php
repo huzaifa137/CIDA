@@ -101,6 +101,31 @@
                         </div>
                     </div>
                 </div>
+
+
+                <div class="row">
+                    @foreach ($allEvents as $event)
+                    <div class="col-lg-6">
+                        <div class="event-item">
+                          <a href="{{ url('event-details/'.$event->id)  }}">  <img class="image-format" id="pic_bd" src="{{'/public/imageUpload/'.$event->imageUpload}}" > </a>
+                          
+                            <div class="event-content">
+                                <div class="event-meta">
+                                    <p><i class="fa fa-calendar-alt"></i>15-Oct-23</p>
+                                    <p><i class="far fa-clock"></i>8:00 - 10:00</p>
+                                    <p><i class="fa fa-map-marker-alt"></i>Arua</p>
+                                </div>
+                                <div class="event-text">
+                                   <a href="{{ url('event-details/'.$event->id)  }}"> <h3>{{$event->title}}</h3></a>
+                                    <p class="JustifyAlign">
+                                        {{$event->introduction}}
+                                    </p>
+                                    <a href="{{ url('event-details/'.$event->id)  }}" class="btn btn-custom" href="">Join Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
         <!-- Event End -->

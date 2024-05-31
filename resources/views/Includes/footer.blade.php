@@ -20,7 +20,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="footer-link">
                     <h2>Popular Links</h2>
-                    <a href="{{route('index')}}">Home</a>
+                    <a href="{{route('/')}}">Home</a>
                     <a href="{{route('about')}}">About Us</a>
                     <a href="{{route('causes')}}">Causes</a>
                     <a href="{{route('events')}}">Upcoming Events</a>

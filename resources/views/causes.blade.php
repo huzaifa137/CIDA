@@ -197,9 +197,16 @@
                             <a href="{{route('DAAWAH-RAMADAN-AND-QURBAN')}}" class="btn btn-custom">Donate Now</a>
                         </div>
                     </div>
+
+
+                    @foreach ($allCauses as $Cause)
+                        
                     <div class="causes-item">
                         <div class="causes-img">
-                           <a href="{{route('Economic-Empowerment')}}"> <img src="/assets/img/EconomicEmpowerment.jpg" alt="Image"></a>
+                           {{-- <a href="{{route('Economic-Empowerment')}}"> <img src="/assets/img/EconomicEmpowerment.jpg" alt="Image"></a> --}}
+
+                           <img class="image-format" id="pic_bd" src="{{'/public/imageUpload/'.$Cause->imageUpload}}" >
+
                         </div>
                         <div class="causes-progress">
                             <div class="progress">
@@ -208,8 +215,8 @@
                                 </div>
                             </div>
                             <div class="progress-text">
-                                <p><strong>Raised:</strong> $1500</p>
-                                <p><strong>Goal:</strong> $10000</p>
+                                <p><strong>Raised:</strong> {{$Cause->raised}}</p>
+                                <p><strong>Goal:</strong> {{$Cause->goal}}</p>
                             </div>
                         </div>
                         <div class="causes-text">
@@ -222,7 +229,45 @@
                         </div>
                     </div>
 
+                    @endforeach
                 </div>
+
+                <div class="owl-carousel causes-carousel mt-5">
+
+                    @foreach ($allCauses as $Cause)
+                        
+                    <div class="causes-item">
+                        <div class="causes-img">
+                           <a href="{{url('cause-details/'.$Cause->id)}}"> <img class="image-format" id="pic_bd" src="{{'/public/imageUpload/'.$Cause->imageUpload}}" ></a>                           
+                        </div>
+                        <div class="causes-progress">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
+                                    <span>15%</span>
+                                </div>
+                            </div>
+                            <div class="progress-text">
+                                <p><strong>Raised:</strong> {{$Cause->raised}}</p>
+                                <p><strong>Goal:</strong> {{$Cause->goal}}</p>
+                            </div>
+                        </div>
+                        <div class="causes-text">
+                            <a href="{{url('cause-details/'.$Cause->id)}}"><h3>{{$Cause->title}}</h3></a>
+                            <p class="JustifyAlign">{{$Cause->introduction}}</p>
+                        </div>
+                        <div class="causes-btn">
+                            <a href="{{url('cause-details/'.$Cause->id)}}" class="btn btn-custom">Learn More</a>
+                            <a href="javascript:void(0);" class="btn btn-custom">Donate Now</a>
+                        </div>
+                    </div>
+
+                    @endforeach
+
+
+                </div>
+
+
+
             </div>
         </div>
         <!-- Causes End -->

@@ -10,7 +10,7 @@
                         <div class="carousel-text">
                             <h1>Let's be kind for children</h1>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus ut mollis mauris. Vivamus egestas eleifend dui ac consequat at lectus in malesuada
+                                Emotional Development: Kindness helps children feel loved and valued, fostering emotional security.
                             </p>
                             <div class="carousel-btn">
                                 <a class="btn btn-custom" href="">Donate Now</a>
@@ -25,7 +25,7 @@
                         <div class="carousel-text">
                             <h1>Get Involved with helping hand</h1>
                             <p>
-                                Morbi sagittis turpis id suscipit feugiat. Suspendisse eu augue urna. Morbi sagittis, orci sodales varius fermentum, tortor
+                                Constructive feedback can help them improve their programs and volunteer experience.
                             </p>
                             <div class="carousel-btn">
                                 <a class="btn btn-custom" href="">Donate Now</a>
@@ -40,7 +40,7 @@
                         <div class="carousel-text">
                             <h1>Bringing smiles to millions</h1>
                             <p>
-                                Sed ultrices, est eget feugiat accumsan, dui nibh egestas tortor, ut rhoncus nibh ligula euismod quam. Proin pellentesque odio
+                                Perform small, unexpected acts of kindness daily, such as paying for someone’s coffee, offering compliments, or helping someone with their groceries.
                             </p>
                             <div class="carousel-btn">
                                 <a class="btn btn-custom" href="">Donate Now</a>

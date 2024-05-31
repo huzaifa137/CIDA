@@ -121,8 +121,11 @@
                         </div>
                     </div>
                 </div>
+
+
                 <div class="row">
-                    <div class="col-lg-4">
+
+                    {{-- <div class="col-lg-4">
                         <div class="blog-item">
                             <div class="blog-img">
                              <a href="{{route('Economic-Empowerment')}}">   <img src="/assets/img/EconomicEmpowerment.jpg" alt="Image"></a>
@@ -137,10 +140,30 @@
                                 <p><i class="fa fa-comments"></i><a href="">15 Comments</a></p>
                             </div>
                         </div>
+                    </div> --}}
+
+                    @foreach ($allCauses as $allCauses)
+                    <div class="col-lg-4">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                            
+                             <a href="{{ url('cause-details/'.$allCauses->id)  }}">  <img class="image-format" id="pic_bd" src="{{'/public/imageUpload/'.$allCauses->imageUpload}}" > </a>
+
+                            </div>
+                            <div class="blog-text">
+                                <h3><a href="{{ url('cause-details/'.$allCauses->id) }}">{{$allCauses->title}}</a></h3>
+                                <p class="JustifyAlign">{{$allCauses->introduction}}</p>
+                            </div>
+                            <div class="blog-meta">
+                                <p><i class="fa fa-user"></i><a href="">Admin</a></p>
+                                <p><i class="fa fa-comments"></i><a href="">15 Comments</a></p>
+                            </div>
+                        </div>
                     </div>
-                    
-                    
-            </div>
+                    @endforeach
+                </div>
+
+
         </div>
         <!-- Blog End -->
 

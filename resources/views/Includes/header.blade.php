@@ -60,7 +60,7 @@
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="container-fluid">
-                <a href="{{route('index')}}" ><img src="/assets/img/logo.png" alt="" style="width: 6rem;"></a>
+                <a href="{{url('index')}}" ><img src="/assets/img/logo.png" alt="" style="width: 6rem;"></a>
 
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
