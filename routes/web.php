@@ -36,8 +36,6 @@ Route::get('Religious-Education-and-Quran-Memorization', [master::class, 'Religi
 
 
 // Protected routes
-Route::middleware(['authcheck'])->group(function () {
-
     Route::get('admin-dashboard', [Master::class, 'addDashboard'])->name('admin-dashboard');
     Route::get('add-cause', [Master::class, 'addCause'])->name('add-cause');
     Route::get('add-event', [Master::class, 'addEvent'])->name('add-event');
@@ -49,7 +47,6 @@ Route::middleware(['authcheck'])->group(function () {
     Route::get('cause-details/{id}', [Master::class, 'causeDetails']);
     Route::get('admin-register', [Master::class, 'adminRegister'])->name('admin-register');
     Route::post('auth-register', [Master::class, 'registerUser'])->name('auth-register');
-});
 
 Route::get('admin-login', [Master::class, 'login'])->name('admin-login');
 
