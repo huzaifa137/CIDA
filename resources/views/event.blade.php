@@ -111,9 +111,9 @@
                           
                             <div class="event-content">
                                 <div class="event-meta">
-                                    <p><i class="fa fa-calendar-alt"></i>15-Oct-23</p>
-                                    <p><i class="far fa-clock"></i>8:00 - 10:00</p>
-                                    <p><i class="fa fa-map-marker-alt"></i>Arua</p>
+                                    <p><i class="fa fa-calendar-alt"></i>{{$event->goal}}</p>
+                                    <p><i class="far fa-clock"></i>{{$event->raised}}</p>
+                                    <p><i class="fa fa-map-marker-alt"></i>{{$event->location}}</p>
                                 </div>
                                 <div class="event-text">
                                    <a href="{{ url('event-details/'.$event->id)  }}"> <h3>{{$event->title}}</h3></a>

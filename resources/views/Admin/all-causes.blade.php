@@ -29,11 +29,11 @@
                                 <thead>
                                     <tr>
                                         <th>
-                                            Title
+                                            id
                                         </th>
+                                        <th>Title</th>
                                         <th>Goal</th>
                                         <th>Raised</th>
-                                        <th>Goal</th>
                                         <th>Introduction</th>
                                         <th>Action</th>
                                     </tr>
@@ -48,6 +48,7 @@
                                             <td>{{ $cause->raised }}</td>
                                             <td>{{ $cause->introduction }}</td>
                                             <td colspan="2">
+                                                <a href="{{ url('edit/cause/'.$cause->id)}}" onclick=" return confirm('Do you want to Edit this Cause ?')" class="btn btn-primary btn-sm">Edit</a>
                                                 <a href="{{ url('delete/cause/'.$cause->id)}}" onclick=" return confirm('Do you want to delete this Cause ?')" class="btn btn-danger btn-sm">Delete</a>
                                             </td>
                                         </tr>

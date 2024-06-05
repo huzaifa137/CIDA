@@ -48,6 +48,15 @@ Route::get('Religious-Education-and-Quran-Memorization', [master::class, 'Religi
     Route::get('admin-register', [Master::class, 'adminRegister'])->name('admin-register');
     Route::post('auth-register', [Master::class, 'registerUser'])->name('auth-register');
 
+    Route::get('edit/event/{id}', [Master::class,'editEvent']);
+    Route::post('store-edit-event', [Master::class, 'storeEditEvent'])->name('store-edit-event');
+
+
+    Route::get('edit/cause/{id}', [Master::class,'editCause']);
+    Route::post('store-edit-cause', [Master::class, 'storeEditCause'])->name('store-edit-cause');
+
+
+
 Route::get('admin-login', [Master::class, 'login'])->name('admin-login');
 
 Route::get('admin-logout', [Master::class, 'logout'])->name('admin-logout');

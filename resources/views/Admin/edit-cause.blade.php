@@ -23,51 +23,49 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Add Event</h5>
+              <h5 class="card-title">Edit Cause</h5>
 
               <!-- General Form Elements -->
-              <form method="POST" action="{{ route('store-event') }}" enctype="multipart/form-data">
+              <form method="POST" action="{{ route('store-edit-cause') }}" enctype="multipart/form-data">
                 @csrf
+
+
+                <input type="hidden" class="form-control" name="record_id" value="{{$causeRecord->id}}" >
+
+
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Title</label>
                   <div class="col-sm-10"> 
-                    <input type="text" class="form-control" name="title" required>
+                    <input type="text" class="form-control" name="title" value="{{$causeRecord->title}}" required>
                   </div>
                 </div>
 
 
                 <div class="row mb-3">
+                  <label for="inputEmail" class="col-sm-2 col-form-label">Goal</label>
 
-
-                  <label for="inputEmail" class="col-sm-2 col-form-label">Date</label>
-                  <div class="col-sm-2">
-                    <input type="date" class="form-control" name="Start_time" required>
+                  <div class="col-sm-4">
+                    <input type="number" class="form-control" name="goal" value="{{$causeRecord->goal}}" required>
                   </div>
 
-                  <label for="inputEmail" class="col-sm-2 col-form-label">Time</label>
-                  <div class="col-sm-2">
-                    <input type="text" class="form-control" name="End_time" required>
+                  <label for="inputEmail" class="col-sm-2 col-form-label">Raised</label>
+                  <div class="col-sm-4">
+                    <input type="number" class="form-control" name="raised" value="{{$causeRecord->raised}}" required>
                   </div>
-
-                  <label for="inputEmail" class="col-sm-2 col-form-label">Location</label>
-                  <div class="col-sm-2">
-                    <input type="text" class="form-control" name="location" required>
-                  </div>
-                  
 
                 </div>
               
                 <div class="row mb-3">
                   <label for="inputPassword" class="col-sm-2 col-form-label">Introduction</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="introduction" required>
+                    <input type="text" class="form-control" name="introduction" value="{{$causeRecord->introduction}}" required>
                   </div>
                 </div>
                 
                 <div class="row mb-3">
                   <label for="inputDate" class="col-sm-2 col-form-label">Description</label>
                   <div class="col-sm-10">
-                    <textarea name="editorContent" id="editorContent" class="form-control"></textarea>
+                    <textarea name="editorContent" id="editorContent" class="form-control" required>value="{{$causeRecord->editorContent}}"</textarea>
                   </div>
                 </div>
           
@@ -80,9 +78,9 @@
 
 
                 <div class="row mb-3">
-                  <label class="col-sm-2 col-form-label">Save Event</label>
+                  <label class="col-sm-2 col-form-label">Save cause</label>
                   <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary">Save Event</button>
+                    <button type="submit" class="btn btn-primary">Update Cause</button>
                   </div>
                 </div>
 
@@ -107,3 +105,5 @@
 
 
   @include('Includes.admin_footer')
+
+  

@@ -29,11 +29,12 @@
                             <thead>
                                 <tr>
                                     <th>
-                                        Title
+                                        id
                                     </th>
-                                    <th>Goal</th>
-                                    <th>Raised</th>
-                                    <th>Goal</th>
+                                    <th>Title</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Location</th>
                                     <th>Introduction</th>
                                     <th>Action</th>
                                 </tr>
@@ -46,8 +47,10 @@
                                         <td>{{ $cause->title }}</td>
                                         <td>{{ $cause->goal }}</td>
                                         <td>{{ $cause->raised }}</td>
+                                        <td>{{ $cause->location }}</td>
                                         <td>{{ $cause->introduction }}</td>
                                         <td colspan="2">
+                                            <a href="{{ url('edit/event/'.$cause->id)}}" onclick=" return confirm('Do you want to edit this Event ?')" class="btn btn-primary btn-sm">Edit</a>
                                             <a href="{{ url('delete/event/'.$cause->id)}}" onclick=" return confirm('Do you want to delete this Event ?')" class="btn btn-danger btn-sm">Delete</a>
                                         </td>
                                     </tr>

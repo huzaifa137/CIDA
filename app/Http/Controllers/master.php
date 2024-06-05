@@ -101,6 +101,74 @@ class master extends Controller
         return view('Admin.add-event');
     }
 
+    public function editEvent($id)
+    {
+
+        $eventRecord = Event::find($id);
+        return view('Admin.edit-event', compact(['eventRecord']));
+    }
+
+    public function storeEditEvent(Request $request)
+    {
+
+        $record_id = $request->record_id;
+
+        $post = Event::find($record_id);
+
+        $post->title = $request->title;
+        $post->goal = $request->Start_time;
+        $post->raised = $request->End_time;
+        $post->location = $request->location;
+        $post->introduction = $request->introduction;
+        $post->editorContent = $request->editorContent;
+        $post->imageUpload = $request->imageUpload;
+
+        if ($request->file('imageUpload')) {
+            $file = $request->file('imageUpload');
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('public/imageUpload'), $filename);
+            $post['imageUpload'] = $filename;
+        }
+
+        $post->save();
+
+        return redirect('all-events')->with('success', 'Event has been Edited successfully');
+
+    }
+
+    public function editCause($id)
+    {
+        $causeRecord = Causes::find($id);
+
+        return view('Admin.edit-cause', compact(['causeRecord']));
+    }
+
+
+    public function storeEditCause(Request $request)
+    {
+
+        $record_id = $request->record_id;
+
+        $post = Causes::find($record_id);
+        $post->title = $request->title;
+        $post->goal = $request->goal;
+        $post->raised = $request->raised;
+        $post->introduction = $request->introduction;
+        $post->editorContent = $request->editorContent;
+        $post->imageUpload = $request->imageUpload;
+
+        if ($request->file('imageUpload')) {
+            $file = $request->file('imageUpload');
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('public/imageUpload'), $filename);
+            $post['imageUpload'] = $filename;
+        }
+
+        $post->save();
+
+        return redirect('all-causes')->with('success', 'Cause has been Updated successfully');
+    }
+
     public function storeCause(Request $request)
     {
 
@@ -123,7 +191,6 @@ class master extends Controller
         $post->save();
 
         return redirect('all-causes')->with('success', 'Cause has been Added successfully');
-
     }
 
     public function storeEvent(Request $request)
@@ -132,8 +199,9 @@ class master extends Controller
         $post = new Event();
 
         $post->title = $request->title;
-        $post->goal = $request->goal;
-        $post->raised = $request->raised;
+        $post->goal = $request->Start_time;
+        $post->raised = $request->End_time;
+        $post->location = $request->location;
         $post->introduction = $request->introduction;
         $post->editorContent = $request->editorContent;
         $post->imageUpload = $request->imageUpload;
